@@ -1,0 +1,98 @@
+.clients {
+    padding-top: 60px;
+    @media (min-width: $breakpoint-xxl) {
+        width: 1720px;
+        margin: 0 auto;
+        padding-bottom: 60px;
+        overflow: hidden;
+    }
+
+    &__title {
+        margin-bottom: 30px;
+        text-align: center;
+        text-transform: uppercase;
+        @include different-text (14px, 700, 17px, $main-color);
+    }
+
+    &__list {
+        overflow: scroll;
+        height: 720px;
+        @media (min-width: $breakpoint-md) {
+            overflow: hidden;
+            height: auto;
+            display: flex;
+            flex-flow: wrap;
+        }
+        @media (min-width: $breakpoint-xxl) {
+            border-radius: 12px;
+        }
+    }
+
+    &__item {
+        height: 120px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        @media (min-width: $breakpoint-md) {
+            flex: 1 0 33%;
+        }
+        @media (min-width: $breakpoint-lg) {
+            flex: 1 0 25%;
+        }
+    }
+}
+
+.c-1 {
+    background: #1C4280;
+}
+
+.c-2 {
+    background: #143646;
+}
+
+.c-3 {
+    background: linear-gradient(0deg, #F48B30, #F48B30), #F48B30;
+}
+
+.c-4 {
+    background: #9E4DC3;
+}
+
+.c-5 {
+    background: #FD9339;
+}
+
+.c-6 {
+    background: #E2E2E4;
+}
+
+.c-7 {
+    background: #C71C36;
+}
+
+.c-8 {
+    background: #DCF3F9;
+}
+
+.c-9 {
+    background: #EAEAEA;
+}
+
+.c-10 {
+    background: #282240;
+}
+
+.c-11 {
+    background: #1D4568;
+}
+
+.c-12 {
+    background: #000000;
+}
+
+.services {
+    &__clients {
+        padding-top: 80px;
+    }
+}

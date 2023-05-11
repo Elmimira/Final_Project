@@ -1,0 +1,85 @@
+.expirience {
+	padding-top: 30px;
+	&__tabs {
+		@media (min-width: $breakpoint-lg) {
+			display: flex;
+		}
+	}
+
+    &__tab {
+		display: flex;
+		gap: 30px;
+		overflow: auto hidden;
+		margin-bottom: 30px;
+		margin-right: -30px;
+		padding-right: 60px;
+		&::-webkit-scrollbar {
+			display: none;
+		}
+		@media (min-width: $breakpoint-md) {
+			margin-right: calc(324px - 50vw);
+		}
+		@media (min-width: $breakpoint-lg) {
+			overflow: visible;
+			margin: 0;
+			flex: 1 1 50%;
+			flex-direction: column;
+			align-items: flex-end;
+		}
+		@media (min-width: $breakpoint-xl) {
+			flex: 1 1 40%;
+		}
+		@media (min-width: $breakpoint-xxl) {
+			flex: 0 0 30%;
+		}
+	}
+
+    &__tab-link {
+		color: $grey-text-color;
+		text-decoration: none;
+		font-size: 38px;
+		line-height: 40px;
+		white-space: nowrap;
+		font-weight: 700;
+
+		&.active {
+			@include gradient-text;
+		}
+        &:hover {
+            color: $accent-color;
+        }
+	}
+
+    &__content {
+		padding-top: 30px;
+		border-top: 4px solid $grey-alt-color;
+		@media (min-width: $breakpoint-lg) {
+			border-top: 0;
+			border-left: 4px solid rgba(255, 255, 255, 0.3);
+			flex: 1 1 50%;
+			padding-top: 10px;
+			padding-left: 60px;
+			display: flex;
+			flex-flow: column;
+			justify-content: center;
+		}
+	}
+
+    &__content-item {
+		display: none;
+		&.active {
+			display: block;
+		}
+        h2 {
+            @include different-text (20px, 700, 24px, $white-color);
+            margin-bottom: 30px;
+            padding-top: 0;
+            @media (min-width: $breakpoint-md) {
+                @include different-text (30px, 700, 37px, $white-color);
+            }
+        }
+        p {
+            @include different-text (19px, 400, 30px, $white-color)
+        }
+	}
+}

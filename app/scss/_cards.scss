@@ -1,0 +1,115 @@
+.cards {
+    padding-bottom: 60px;
+@media (min-width: $breakpoint-md) {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-flow: wrap;
+    gap: 60px;
+}
+    &__link {
+        margin-top: 30px;
+        @media (min-width: $breakpoint-md) {
+            margin-top: 60px;
+        }
+        a {
+            margin-bottom: 10px;
+            position: relative;
+            text-decoration: none;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            @include different-text (14px, 700, 17px, $regular-color);
+            &::before {
+                content: '';
+                position: absolute;
+                top: 25%;
+                right: -10px;
+                width: 8px;
+                height: 8px;
+                border-top: 3px solid $regular-color;
+                transform: rotate(45deg);
+                }
+                &::after {
+                    content: '';
+                    position: absolute;
+                    top: 25%;
+                    right: -10px;
+                    width: 8px;
+                    height: 8px;
+                    border-bottom: 3px solid $regular-color;
+                    transform: rotate(-45deg);
+                    :hover {
+                        border-color: $accent-color;
+                    }
+                }
+                &:hover{
+                    color: $accent-color;
+                }
+                &:hover::after {
+                    border-color: $accent-color;
+                }
+                &:hover::before {
+                    border-color: $accent-color;
+                }
+        }
+    }
+
+    &__container h2 {
+        margin-bottom: 30px;
+        @include different-text (30px, 700, 37px, transparent);
+        background-clip: text;
+        background-image: $red-text-gradient;
+        @media (min-width: $breakpoint-md) {
+            font-size: 38px;
+            line-height: 46px;
+            margin-bottom: 60px;
+        }
+    }
+
+    &__child {
+        margin-bottom: 30px;
+        @media (min-width: $breakpoint-md) {
+            margin-bottom: 0;
+            flex: 1 1 40%;
+        }
+        @media (min-width: $breakpoint-lg) {
+            flex: 1 1 25%;
+        }
+    }
+    &__child:last-child {
+        padding-bottom: 60px;
+    }
+
+    &__image {
+        width: 92px;
+        height: 92px;
+        background: $white-color;
+        border-radius: 24px;
+        position: relative;
+        
+        svg {
+            display: block;
+            width: 92px;
+            height: 92px;   
+            position: absolute;
+            top: 0;
+            left: 0;
+            padding: 14px;
+        }
+}
+
+&__description {
+        h3 {
+            margin-top: 30px;
+            margin-bottom: 15px;
+        } 
+        a {
+            text-decoration: none;
+            @include different-text (22px, 700, 27px, $regular-color);
+        }
+        p {
+            @include different-text (16px, 400, 26px, $white-color);
+        }
+    }
+}
+

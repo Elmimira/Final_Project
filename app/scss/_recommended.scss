@@ -1,0 +1,123 @@
+.recommended {
+    background: $grey-color;
+    padding-top: 30px;
+
+    &__head {
+        margin-bottom: 30px;
+    }
+
+    &__head-link {
+        margin: 30px 0 5px 0;
+        position: relative;
+        text-decoration: none;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        @include different-text (14px, 700, 17px, $regular-color);
+        &::before {
+            content: '';
+            position: absolute;
+            top: 25%;
+            right: -10px;
+            width: 8px;
+            height: 8px;
+            border-top: 3px solid $regular-color;
+            transform: rotate(45deg);
+            }
+            &::after {
+                content: '';
+                position: absolute;
+                top: 25%;
+                right: -10px;
+                width: 8px;
+                height: 8px;
+                border-bottom: 3px solid $regular-color;
+                transform: rotate(-45deg);
+                :hover {
+                    border-color: $accent-color;
+                }
+            }
+            &:hover{
+                color: $accent-color;
+            }
+            &:hover::after {
+                border-color: $accent-color;
+            }
+            &:hover::before {
+                border-color: $accent-color;
+            }
+    }
+
+    &__head-title {
+        margin-bottom: 30px;
+        @include different-text (30px, 700, 37px, transparent);
+        background-clip: text;
+        background-image: $red-text-gradient;
+        @media (min-width: $breakpoint-md) {
+            font-size: 38px;
+            line-height: 46px;
+        }
+    }
+
+    &__cards {
+        display: flex;
+        flex-flow: column;
+        gap: 30px;
+        @media (min-width: $breakpoint-md) {
+            flex-flow: row wrap;
+        }
+    }
+    
+    &__cards-child {
+        background: #FFFFFF;
+        border-radius: 8px;
+        overflow: hidden;
+        @media (min-width: $breakpoint-md) {
+            flex: 1 1 40%;
+        }
+        @media (min-width: $breakpoint-lg) {
+            flex: 1 1 30%;
+        }
+    }
+
+    &__cards-image {
+        width: 100%;
+        height: 200px;
+        img {
+            object-fit: cover;
+            height: 100%;
+            width: 100%;
+        }
+        &.bg-1 {
+            background: url('../images/cover-1.png') center/ cover no-repeat;
+        }
+        &.bg-2 {
+            background: url('../images/cover-2.png') center/ cover no-repeat;
+        }
+        &.bg-3 {
+            background: url('../images/cover-3.png') center/ cover no-repeat;
+        }
+        
+    }
+
+    &__cards-frame {
+        padding: 30px;
+    }
+
+    &__cards-title {
+        text-decoration: none;
+        @include different-text (16px, 700, 20px, $regular-color);
+    }
+
+    &__cards-date {
+        padding: 15px 0;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        @include different-text (12px, 700, 15px, $grey-text-color);
+    }
+
+    &__cards-text {
+        padding: 15px 0 30px 0;
+        @include different-text (14px, 400, 22px, #000000);
+        border-top: 4px solid $grey-separator-color;
+    }
+}
